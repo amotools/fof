@@ -109,7 +109,7 @@ class FOFFormFieldUrl extends JFormFieldUrl implements FOFFormField
 	public function getRepeatable()
 	{
 		// Initialise
-		$class             = '$this->id';
+		$class             = $this->id;
 		$show_link         = false;
 		$empty_replacement = '';
 
