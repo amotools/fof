@@ -1440,15 +1440,7 @@ class FOFTable extends JObject implements JTableInterface
         }
 
 		$date = JFactory::getDate();
-
-		if (FOFPlatform::getInstance()->checkVersion(JVERSION, '3.0', 'ge'))
-		{
-			$time = $date->toSql();
-		}
-		else
-		{
-			$time = $date->toMysql();
-		}
+		$time = $date->toSql();
 
 		$query = $this->_db->getQuery(true)
 			->update($this->_db->qn($this->_tbl))
@@ -2510,14 +2502,7 @@ class FOFTable extends JObject implements JTableInterface
 				JLoader::import('joomla.utilities.date');
 				$date = new JDate();
 
-				if (FOFPlatform::getInstance()->checkVersion(JVERSION, '3.0', 'ge'))
-				{
-					$this->$created_on = $date->toSql();
-				}
-				else
-				{
-					$this->$created_on = $date->toMysql();
-				}
+				$this->$created_on = $date->toSql();
 			}
 			elseif ($hasModifiedOn && $hasModifiedBy)
 			{
@@ -2530,14 +2515,7 @@ class FOFTable extends JObject implements JTableInterface
 				JLoader::import('joomla.utilities.date');
 				$date = new JDate();
 
-				if (FOFPlatform::getInstance()->checkVersion(JVERSION, '3.0', 'ge'))
-				{
-					$this->$modified_on = $date->toSql();
-				}
-				else
-				{
-					$this->$modified_on = $date->toMysql();
-				}
+				$this->$modified_on = $date->toSql();
 			}
 		}
 
