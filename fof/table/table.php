@@ -1205,6 +1205,7 @@ class FOFTable extends JObject implements JTableInterface
 
 		if ($result !== true)
 		{
+			$this->setError($this->_db->getErrorMsg());
 			return false;
 		}
 
