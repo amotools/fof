@@ -488,7 +488,7 @@ class FOFModel extends JObject
 	 */
 	public static function addTablePath($path)
 	{
-		JTable::addIncludePath($path);
+		FOFTable::addIncludePath($path);
 	}
 
 	/**
